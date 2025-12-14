@@ -15,6 +15,14 @@
   /* scroll behaviour makes the <a> links to ids scroll to position over time rather than immediately */
   scroll-behavior: smooth;
 }
+/* check if user has dark mode set */
+@media (prefers-color-scheme: dark){
+  /* if they do, switch order of custom colours */
+  :root{
+    --col-02:#171219;
+    --col-01:#f2fbeb;
+  }
+}
 
 body{
   padding: 1rem;
@@ -91,4 +99,30 @@ li ul{
   /* note the use of position: sticky to keep the button on the page even with scrolling */
   position: sticky;
   top: 1rem;
+}
+
+/* media queries */
+/* if my screen is larger than 800 px */
+@media (width >= 800px){
+  /* change the font size of my h1 */
+  h1{
+    color: red;
+  }
+  .img-wrapper{
+    width: 30%;
+    float: right;
+  }
+}
+
+@media (width > 900px) and (orientation: landscape){
+  /* #modeButton{
+    display: none;
+  } */
+}
+/* if user has reduced motion turned on */
+/* change scroll behaviour */
+@media (prefers-reduced-motion: reduce){
+  :root{
+    scroll-behavior: auto;
+  }
 }
